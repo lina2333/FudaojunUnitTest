@@ -142,28 +142,22 @@ class testNum(unittest.TestCase):
         self.assertEqual("hello world",hello())
 
 if __name__ == '__main__':
-    # unittest.main()
-    #可打印出方法名
-    suite = unittest.TestLoader().loadTestsFromTestCase(testNum)
-    unittest.TextTestRunner(verbosity=3).run(suite)
-# if __name__ == '__main__':
-#     suite1 = unittest.TestLoader().loadTestsFromTestCase(Login)
-#     suite2 = unittest.TestLoader().loadTestsFromTestCase(Register)
-#     alltest = unittest.TestSuite([suite1, suite2])
-#     unittest.TextTestRunner(verbosity=2).run(alltest)
-#
-#     # 确定生成报告的路径 这是放在桌面上了
-#     filePath = '/Users/lina/Desktop/TestReport.html'
-#     fp = open(filePath, 'wb')
-#     # 生成报告的Title,描述
-#     runner = HTMLTestReportCN.HTMLTestRunner(
-#         stream=fp,
-#         title='自动化测试报告',
-#         description='这运行的都什么玩意儿',
-#         tester='今天怎么不开心'
-#     )
-#     # 运行测试用例
-#     # runner.run(alltest)
-#     # 关闭文件，否则会无法生成文件
-#     # fp.close()
+    suite1 = unittest.TestLoader().loadTestsFromTestCase(Login)
+    suite2 = unittest.TestLoader().loadTestsFromTestCase(Register)
+    alltest = unittest.TestSuite([suite1, suite2])
+
+    # 确定生成报告的路径 这是放在桌面上了
+    filePath = '/Users/lina/Desktop/TestReport.html'
+    fp = open(filePath, 'wb')
+    # 生成报告的Title,描述
+    runner = HTMLTestReportCN.HTMLTestRunner(
+        stream=fp,
+        title='自动化测试报告',
+        description='这运行的都什么玩意儿',
+        tester='今天怎么不开心'
+    )
+    # 运行测试用例
+    runner.run(alltest)
+    # 关闭文件，否则会无法生成文件
+    # fp.close()
 
