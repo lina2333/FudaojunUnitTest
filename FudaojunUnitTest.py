@@ -51,8 +51,7 @@ class Login(unittest.TestCase):
         self.driver.close_app()
         self.driver.quit()
 
-    # 单元测试方法命名需要以 test 开头
-    def test_login_case1(self):
+    def login_case1(self):
         u"""已有账号正常登录"""
 
         # 跳过引导页
